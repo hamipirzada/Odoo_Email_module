@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+        <!-- MailBody template for displaying individual mail items in the inbox -->
+    <t t-name="MailBody" owl="1">
+        <div class="inbox-message-item message-default-unread"
+             t-att-data-id="props.mail.id" t-ref="root" style="border: 1px solid #ddd; margin: 2px; padding: 10px; display: flex; align-items: center;">
+           <div class="checkbox" style="margin-right: 10px; display: inline-block;">
+                   <input type="checkbox" 
+                          t-att-data-id="props.mail.id"
+                          class="mail_check_box"
+                          t-on-click="onClickSelect"
+                          style="margin-right: 5px;"/>
+           </div>
+            <div>
+        <button class="btn star" t-att-data-id="props.mail.id" style="margin: 0;"
+                t-on-click="starMail">
+            <img t-if="!state.starred"
+                 src="/odoo_mail_management/static/src/img/star_border_black_24dp.svg"
+                 alt="Not starred" t-att-data-id="props.mail.id"
+                 class="btn-icon-sm btn-icon-alt btn-icon-hover message-btn-icon"
+                 id="not_starred"/>
+            <img t-else=""
+                 src="/odoo_mail_management/static/src/img/yellow_star.svg"
+                 alt="Not starred"
+                 class="btn-icon-sm btn-icon-alt btn-icon-hover message-btn-icon"
+                 id="starred"/>
+        </button>
+        </div>
+            <div class="message-content" style="flex: 1; cursor: pointer;" t-att-data-id="props.mail.id"
+                 t-on-click="openMail">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <strong t-out="props.mail.subject or 'No Subject'"/> 
+                        <span style="color: #666; margin-left: 10px;" t-out="props.mail.email_to"/>
+                    </div>
+                    <div style="color: #999; font-size: 12px;">
+                        <span t-out="formatDateTime(props.mail.message_date || props.mail.create_date)"/>
+                    </div>
+                </div>
+                <div style="color: #888; font-size: 14px; margin-top: 5px;">
+                    <span t-out="html_content or 'No content'"/>
+                </div>
+            </div>
+            <div class="message-actions" style="margin-left: 10px;">
+                <button t-if="props.mailType != 'archive' and props.mailType != 'trash'" class="btn btn-sm" t-on-click="archiveMail" title="Archive">📁</button>
+                <button t-if="props.mailType == 'archive'" class="btn btn-sm" t-on-click="unArchive" title="Unarchive">📤</button>
+                <button t-if="props.mailType == 'trash'" class="btn btn-sm" t-on-click="restoreMail" title="Restore">↩️</button>
+                <button class="btn btn-sm" t-on-click="deleteMail" title="Delete">🗑️</button>
+            </div>
+        </div>
+    </t>
+</templates>

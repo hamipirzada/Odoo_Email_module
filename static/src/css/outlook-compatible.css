@@ -1,0 +1,747 @@
+/* OUTLOOK-COMPATIBLE THEME - Maintains original structure with Outlook styling */
+
+/* Import original styles first */
+.checkbox,.arrow {
+	background: none;
+	border: none;
+	padding: 0 4px;
+}
+.btn-alt:hover {
+	background-color: var(--fill-hover);
+}
+.btn-page {
+	background: none;
+	border: none;
+	padding: 0 2px;
+}
+.btn-icon-sm {
+	height: 20px;
+	width: 20px;
+	border-radius: 0;
+}
+
+.btn-icon-alt {
+	opacity: var(--opacity);
+}
+
+.hrt-rule {
+	height: 1px;
+	background-color: #dadce0;
+}
+
+/* ---- BODY GRID with Outlook colors ---- */
+
+.body-wrapper {
+	display: grid;
+	grid-template-columns: 280px 1fr 55px;
+	grid-template-rows: auto calc(100vh - 64px);
+	font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+}
+
+/* ==== HEADER with Outlook styling ==== */
+
+.head {
+	display: grid;
+    grid-template-columns: 270px 1fr -webkit-min-content;
+    grid-template-columns: 270px 1fr min-content;
+    -ms-flex-pack: justify;
+    -ms-flex-align: center;
+    align-items: center;
+    grid-column-gap: 12px;
+    height: 64px;
+    background: #0078d4;
+    color: white;
+    border-bottom: 1px solid #106ebe;
+    grid-column: 1 / -1;
+}
+
+.header-group {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    -ms-flex-align: center;
+    margin: 0 16px;
+    color: white;
+}
+
+.header-group img {
+    max-height: 32px;
+    filter: brightness(0) invert(1);
+}
+
+.header-search {
+	display: -webkit-box; 
+    display: -ms-flexbox;
+    -ms-flex-align: center;
+    -ms-flex-pack: justify;
+    width: 100%;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 6px 12px;
+    position: relative;
+}
+
+.header-search:focus-within {
+	background-color: white;
+}
+
+.header-search:focus-within .header-search-input {
+    color: #323130;
+}
+
+.btn[type="reset"] {
+	display: none;
+}
+
+.header-search:focus-within .btn[type="reset"] {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.header-search-input {
+	display: block;
+	font-family: "Segoe UI", sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	background-color: transparent;
+	width: 100%;
+	padding: 4px;
+	border: none;
+	outline: none;
+	color: white;
+}
+
+.header-search-input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.header-search:focus-within .header-search-input {
+    color: #323130;
+}
+
+.header-search:focus-within .header-search-input::placeholder {
+    color: #8a8886;
+}
+
+#header-profile {
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.header-profile {
+	height: 32px;
+	width: 32px;
+	opacity: 1;
+	border-radius: 50%;
+}
+
+#header-menu {
+	width: 48px;
+	height: 48px;
+	margin: 4px;
+}
+
+/* ==== LEFT SIDEBAR with Outlook styling ==== */
+
+.left-sidebar {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: column;
+	flex-flow: column;
+	grid-column: 1 / 2;
+	grid-row: 2 / -1;
+	background: #faf9f8;
+	border-right: 1px solid #edebe9;
+}
+
+.left-sidebar-compose {
+	padding: 16px;
+	margin: 16px 0;
+}
+
+.sidebar-btn-compose {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.5rem;
+	background: #0078d4;
+	color: white;
+	width: 100%;
+	height: 40px;
+	border: none;
+	border-radius: 2px;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+	gap: 8px;
+}
+
+.sidebar-btn-compose:hover {
+	background: #106ebe;
+}
+
+.sidebar-btn-compose-icon {
+	width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+.sidebar-btn-compose-title {
+	color: white;
+	font-family: "Segoe UI", sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.category-item-list {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: column;
+	flex-flow: column;
+	width: 100%;
+	margin: 0;
+	padding: 0 12px;
+}
+
+.category-item {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row nowrap;
+	flex-flow: row nowrap;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	color: #323130;
+	font-family: "Segoe UI", sans-serif;
+	font-size: 14px;
+	line-height: 1.2rem;
+	min-height: 36px;
+	padding: 8px 12px;
+	border-radius: 2px;
+	cursor: pointer;
+	transition: background-color 0.15s ease;
+	margin-bottom: 2px;
+}
+
+.category-item:hover {
+	background-color: #f3f2f1;
+}
+
+.category-item > div {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 12px;
+}
+
+.category-item-icon {
+	width: 16px;
+	height: 16px;
+	opacity: 0.8;
+	fill: #605e5c;
+}
+
+.category-item.active {
+	color: #0078d4;
+	font-weight: 600;
+	background-color: #deecf9;
+	position: relative;
+}
+
+.category-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #0078d4;
+    border-radius: 0 2px 2px 0;
+}
+
+.category-item.active .category-item-icon {
+	fill: #0078d4;
+	opacity: 1;
+}
+
+.category-item-number {
+    font-size: 12px;
+    color: #8a8886;
+    font-weight: 400;
+    min-width: 20px;
+    text-align: right;
+}
+
+.category-item.active .category-item-number {
+    color: #0078d4;
+    font-weight: 600;
+}
+
+.category-title {
+	font-family: "Segoe UI", sans-serif;
+	color: #8a8886;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	padding: 16px 12px 8px;
+	margin: 0;
+}
+
+/* ==== BODY ==== */
+
+.mail_inbox {
+	grid-column: 2 / 3;
+	grid-row: 2 / -1;
+	overflow: hidden;
+	background: white;
+}
+
+/* ==== MAIL TOOLBAR ==== */
+
+.inbox-menu {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row;
+	flex-flow: row;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	height: 44px;
+	width: auto;
+	background-color: white;
+	padding: 0 16px;
+	border-bottom: 1px solid #edebe9;
+	margin-right: 16px;
+	gap: 8px;
+}
+
+.inbox-menu-group {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row;
+	flex-flow: row;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 8px;
+}
+
+.inbox-btn-group {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 4px;
+}
+
+.inbox-menu .btn {
+    height: 32px;
+    min-width: 32px;
+    padding: 0 8px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 12px;
+    color: #323130;
+    transition: all 0.15s ease;
+}
+
+.inbox-menu .btn:hover {
+    background: #f3f2f1;
+    border-color: #d2d0ce;
+}
+
+.inbox-menu .btn img {
+    width: 16px;
+    height: 16px;
+}
+
+.inbox-category {
+	display: none; /* Hide the primary/social/promotions tabs for now */
+}
+
+/* ==== MAIL CONTENT ==== */
+
+.content {
+	display: block;
+	margin-bottom: 16px;
+	overflow: hidden;
+	overflow-y: scroll;
+	height: calc(100vh - 152px);
+}
+
+.mail {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-bottom: 8px;
+}
+
+.inbox-message-item {
+	position: relative;
+	display: flex;
+	padding: 12px 16px;
+	border-bottom: 1px solid #edebe9;
+	cursor: pointer;
+	transition: background-color 0.15s ease;
+	align-items: flex-start;
+	gap: 12px;
+}
+
+.inbox-message-item:hover {
+	background: #f3f2f1;
+}
+
+.inbox-message-item.selected {
+    background: #deecf9;
+}
+
+.inbox-message-item.message-default-unread {
+    background: #f8f9fa;
+    border-left: 3px solid #0078d4;
+}
+
+.inbox-message-item.message-default-unread .message-sender,
+.inbox-message-item.message-default-unread .message-subject {
+    font-weight: 600;
+}
+
+.checkbox {
+    margin-top: 4px;
+}
+
+.checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #0078d4;
+}
+
+.star {
+    margin-top: 4px;
+}
+
+.star img {
+    width: 16px;
+    height: 16px;
+}
+
+.message-default {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: flex-start;
+	-ms-flex-align: flex-start;
+	align-items: flex-start;
+	font-family: "Segoe UI", sans-serif;
+	color: #323130;
+	white-space: nowrap;
+	overflow: hidden;
+	overflow-x: hidden;
+	flex: 1;
+	min-width: 0;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.message-sender {
+    font-size: 14px;
+    color: #323130;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.message-subject {
+	font-size: 14px;
+	color: #323130;
+	font-weight: 400;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+}
+
+.message-seperator {
+    display: none;
+}
+
+.message-body {
+	font-size: 12px;
+	color: #8a8886;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+	line-height: 1.3;
+}
+
+.message-date {
+	position: absolute;
+	right: 16px;
+	top: 12px;
+	color: #8a8886;
+	font-size: 12px;
+	font-family: "Segoe UI", sans-serif;
+}
+
+.message-default .unread {
+	color: #323130;
+	font-weight: 600;
+}
+
+.message-default .read {
+	color: #8a8886;
+	font-weight: 400;
+}
+
+.message-group-hidden {
+	display: none;
+	position: absolute;
+	right: 16px;
+	top: 50%;
+	transform: translateY(-50%);
+	gap: 4px;
+}
+
+.inbox-message-item:hover .message-group-hidden {
+	display: flex;
+}
+
+.inbox-message-item:hover .message-date {
+    display: none;
+}
+
+.message-group-hidden .btn {
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s ease;
+    padding: 0;
+}
+
+.message-group-hidden .btn:hover {
+    background: #f3f2f1;
+}
+
+.message-group-hidden .btn img {
+    width: 14px;
+    height: 14px;
+    opacity: 0.6;
+}
+
+.message-group-hidden .btn:hover img {
+    opacity: 1;
+}
+
+/* ==== RIGHT SIDEBAR ==== */
+
+.app-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: column;
+	flex-flow: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	padding: 10px;
+	border-left: 1px solid #edebe9;
+	grid-column: 3 / 4;
+	grid-row: 2 / -1;
+	background: #faf9f8;
+}
+
+.app-item {
+	margin-bottom: 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4px;
+}
+
+.app-item button {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s ease;
+}
+
+.app-item button:hover {
+    background: #f3f2f1;
+}
+
+.app-item button img {
+    width: 16px;
+    height: 16px;
+}
+
+.app-item p {
+    font-size: 10px;
+    color: #8a8886;
+    margin: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Compose Modal - Keep original for compatibility */
+.small-modal {
+    position: fixed;
+    bottom: 0;
+    right: 5%;
+    width: 30%;
+    min-width: 400px;
+    border: 1px solid #edebe9;
+    border-radius: 4px 4px 0 0;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+    z-index: 1000;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.large-modal {
+    border-radius: 4px;
+}
+
+/* Message View (Reading Pane) */
+.message {
+    padding: 24px;
+    background: white;
+    font-family: "Segoe UI", sans-serif;
+    line-height: 1.6;
+}
+
+.message h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #323130;
+    margin: 0 0 16px 0;
+}
+
+.message > div {
+    margin-bottom: 8px;
+    color: #605e5c;
+    font-size: 14px;
+}
+
+.message strong {
+    color: #323130;
+}
+
+/* Root Variables */
+:root {
+  --font: "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  --font-sec: "Segoe UI", "Roboto", Arial, Helvetica, sans-serif;
+  --font-m: 14px;
+  --font-sm: 12px;
+
+  --black: #323130;
+  --grey: #605e5c;
+  --light-grey: #8a8886;
+  --red: #d13438;
+  --blue: #0078d4;
+  --fill-red: #fce8e6;
+  --fill-grey: #f8f9fa;
+  --fill-hover: #f3f2f1;
+  --fill-border: #edebe9;
+
+  --opacity: 0.54;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+    .body-wrapper {
+        grid-template-columns: 60px 1fr 55px;
+    }
+    
+    .sidebar-btn-compose-title,
+    .category-item-title,
+    .category-item-number {
+        display: none;
+    }
+    
+    .left-sidebar {
+        overflow-x: hidden;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .app-container {
+        display: none;
+    }
+    
+    .body-wrapper {
+        grid-template-columns: 60px 1fr;
+    }
+    
+    .message-default {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .message-date {
+        position: static;
+        font-size: 11px;
+        margin-top: 4px;
+    }
+}
